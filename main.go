@@ -2,8 +2,10 @@ package main
 
 import (
 	"net/http"
+
+	"github.com/joaotonial/golangwebserver/controllers"
 )
 
 func main() {
-	http.HandleFunc("\/posts", api.tonis)
+	http.HandleFunc("/posts", controllers.Get)
 }
