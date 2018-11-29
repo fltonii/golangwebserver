@@ -7,6 +7,18 @@ import (
 
 var Tonis int
 
-func Get(w http.ResponseWriter, r *http.Request) {
+func GetPosts(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode("DIGDIN")
+}
+func GetPost(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode("DIGDIN")
+}
+func CreatePost(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode("DIGDIN")
+}
+func EditPost(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode("DIGDIN")
+}
+func DeletePost(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode("DIGDIN")
 }

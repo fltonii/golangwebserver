@@ -1,11 +1,7 @@
 package main
 
-import (
-	"net/http"
-
-	"github.com/joaotonial/golangwebserver/controllers"
-)
+import "github.com/joaotonial/golangwebserver/routes"
 
 func main() {
-	http.HandleFunc("/posts", controllers.Get)
+	routes.Routes()
 }
