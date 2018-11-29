@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/posts", api.tonis)
+	http.HandleFunc("\/posts", api.tonis)
 }
