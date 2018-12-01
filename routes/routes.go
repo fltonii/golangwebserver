@@ -11,7 +11,7 @@ func Routes() (router *mux.Router) {
 	router.HandleFunc("/api/posts", controllers.GetPosts).Methods("GET")
 	router.HandleFunc("/api/posts/{id}", controllers.GetPost).Methods("GET")
 	router.HandleFunc("/api/posts", controllers.CreatePost).Methods("POST")
-	router.HandleFunc("/api/posts", controllers.EditPost).Methods("PUT")
+	router.HandleFunc("/api/posts/{id}", controllers.EditPost).Methods("PUT")
 	router.HandleFunc("/api/posts/{id}", controllers.DeletePost).Methods("DELETE")
 	return
 }
