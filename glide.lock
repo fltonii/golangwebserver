@@ -1,0 +1,17 @@
+hash: b445745ce4f6f0ecd97690830b74e75292115eaff6ef5efd9740689c86597289
+updated: 2018-12-03T20:09:10.983427191-03:00
+imports:
+- name: github.com/gorilla/mux
+  version: 3d80bc801bb034e17cae38591335b3b1110f1c47
+- name: github.com/jinzhu/gorm
+  version: 472c70caa40267cb89fd8facb07fe6454b578626
+  subpackages:
+  - dialects/postgres
+- name: github.com/jinzhu/inflection
+  version: 04140366298a54a039076d798123ffa108fff46c
+- name: github.com/lib/pq
+  version: 9eb73efc1fcc404148b56765b0d3f61d9a5ef8ee
+  subpackages:
+  - hstore
+  - oid
+testImports: []
