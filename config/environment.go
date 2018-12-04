@@ -16,7 +16,7 @@ var err error
 func Env() {
 	os.Setenv("HOST", "192.95.30.171")
 	os.Setenv("DBPORT", "5432")
-	os.Setenv("USER", "postgres")
+	os.Setenv("USER", "root")
 	os.Setenv("PASSWORD", "123456")
 	os.Setenv("DBNAME", "trainingblog")
 	os.Setenv("PORT", "7070")
