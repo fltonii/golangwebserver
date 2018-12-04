@@ -31,6 +31,6 @@ func OpenDb() {
 		conf)
 
 	if err != nil {
-		panic("database failed to connect")
+		panic(err)
 	}
 }
