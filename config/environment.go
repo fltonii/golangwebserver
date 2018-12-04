@@ -20,13 +20,12 @@ func Env() {
 	os.Setenv("PASSWORD", "sbsistemas5846")
 	os.Setenv("DBNAME", "trainingblog")
 	os.Setenv("PORT", "7070")
-	os.Setenv("SSLMODE", "require")
+	os.Setenv("SSLMODE", "disabled")
 }
 
 // OpenDb open database connection
 func OpenDb() {
-	conf := ("host=" + os.Getenv("HOST") + " port=" + os.Getenv("DBPORT") + " user=" + os.Getenv("USER") + " dbname=" + os.Getenv("DBNAME") + " sslmode=" + os.Getenv("SSLMODE") + " password=" + os.Getenv("PASSWORD"))
-	fmt.Println(conf)
+	conf := ("host=" + os.Getenv("HOST") + " port=" + os.Getenv("DBPORT") + " user=" + os.Getenv("USER") + " dbname=" + os.Getenv("DBNAME") + " sslmode=" + os.Getenv("SSLMODE") " password=" + os.Getenv("PASSWORD"))
 	Db, err = gorm.Open(
 		"postgres",
 		conf)
