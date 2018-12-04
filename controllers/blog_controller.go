@@ -39,15 +39,15 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 
 func EditPost(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
-	var post *models.Post
+	var post []*models.Post
 	var updated *models.Post
 	_ = json.NewDecoder(r.Body).Decode(&updated)
 
 	config.Db.Where("id = ?", params["id"]).First(&post)
 
-	// post[0].Content = updated.Content
-	// config.Db.Save(&post)
-	json.NewEncoder(w).Encode(post)
+	post[0].Content = updated.Content
+	config.Db.Save(&post[0])
+	json.NewEncoder(w).Encode(post[0])
 }
 
 func DeletePost(w http.ResponseWriter, r *http.Request) {
