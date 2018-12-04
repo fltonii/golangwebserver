@@ -1,4 +1,3 @@
-
 package config
 
 import (
@@ -13,16 +12,16 @@ var err error
 
 // Env defines environmental variables
 func Env() {
-	os.Setenv("HOST", "localhost")
+	os.Setenv("HOST", "192.95.30.171")
 	os.Setenv("DBPORT", "5432")
-	os.Setenv("USER", "tonis")
+	os.Setenv("USER", "training")
 	os.Setenv("PASSWORD", "123456")
-	os.Setenv("DBNAME", "golangblog")
+	os.Setenv("DBNAME", "trainingblog")
 	os.Setenv("PORT", "7070")
 }
 
 // OpenDb open database connection
-func OpenDb(){
+func OpenDb() {
 	conf := ("host=" + os.Getenv("HOST") + " port=" + os.Getenv("DBPORT") + " user=" + os.Getenv("USER") + " dbname=" + os.Getenv("DBNAME") + " sslmode=disable password=" + os.Getenv("PASSWORD"))
 	Db, err = gorm.Open(
 		"postgres",
