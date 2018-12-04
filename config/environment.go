@@ -19,7 +19,7 @@ func Env() {
 	os.Setenv("USER", "tonis")
 	os.Setenv("PASSWORD", "123456")
 	os.Setenv("DBNAME", "golangblog")
-	os.Setenv("PORT", "7070")
+	// os.Setenv("PORT", "7070")
 }
 
 // OpenDb open database connection
