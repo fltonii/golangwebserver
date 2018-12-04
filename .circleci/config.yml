@@ -19,9 +19,15 @@ jobs:
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: ~/go/src/github.com/joaotonial/golangwebserver
     steps:
+      - run:
+          name: Clone
+          working_directory: ~/
+          command: |
+            git clone --depth 1 https://96bec65ccbd005cd0a4ec6e04b158f0cc19656b4@github.com/joaotonial/golangwebserver.git
+  
       - deploy:
-          name: Trigger docs deployment
-          working_directory: ~/go/src/github.com/joaotonial/golangwebserver
+          name: Trigger deployment
+          working_directory: ~/golangwebserver
           command: |
             git config credential.helper 'cache --timeout=120'
             git config user.email "tonialjoao97@gmail.com"
