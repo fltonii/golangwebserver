@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/jinzhu/gorm"
@@ -16,8 +15,8 @@ var err error
 func Env() {
 	os.Setenv("HOST", "192.95.30.171")
 	os.Setenv("DBPORT", "5432")
-	os.Setenv("USER", "root")
-	os.Setenv("PASSWORD", "123456")
+	os.Setenv("USER", "postgres")
+	os.Setenv("PASSWORD", "sbsistemas5846")
 	os.Setenv("DBNAME", "trainingblog")
 	os.Setenv("PORT", "7070")
 }
@@ -25,7 +24,6 @@ func Env() {
 // OpenDb open database connection
 func OpenDb() {
 	conf := ("host=" + os.Getenv("HOST") + " port=" + os.Getenv("DBPORT") + " user=" + os.Getenv("USER") + " dbname=" + os.Getenv("DBNAME") + " sslmode=disable password=" + os.Getenv("PASSWORD"))
-	fmt.Println(conf)
 	Db, err = gorm.Open(
 		"postgres",
 		conf)
