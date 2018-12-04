@@ -18,6 +18,7 @@ jobs:
     ####   /go/src/github.com/circleci/go-tool
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: ~/go/src/github.com/joaotonial/golangwebserver
+    steps:
       - deploy:
           name: Trigger docs deployment
           working_directory: ~/go/src/github.com/joaotonial/golangwebserver
