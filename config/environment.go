@@ -19,7 +19,7 @@ func Env() {
 	os.Setenv("PASSWORD", "sbsistemas5846")
 	os.Setenv("DBNAME", "trainingblog")
 	os.Setenv("PORT", "7070")
-	os.Setenv("SSLMODE", "disabled")
+	os.Setenv("SSLMODE", "disable")
 }
 
 // OpenDb open database connection
