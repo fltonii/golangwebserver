@@ -13,7 +13,7 @@ var err error
 
 // Env defines environmental variables
 func Env() {
-	os.Setenv("HOST", "192.95.30.171")
+	os.Setenv("HOST", "localhost")
 	os.Setenv("DBPORT", "5432")
 	os.Setenv("USER", "postgres")
 	os.Setenv("PASSWORD", "sbsistemas5846")
