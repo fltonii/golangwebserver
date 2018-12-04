@@ -1,9 +1,11 @@
 package config
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 // Db is the global variable that must be used to access the db
@@ -23,6 +25,7 @@ func Env() {
 // OpenDb open database connection
 func OpenDb() {
 	conf := ("host=" + os.Getenv("HOST") + " port=" + os.Getenv("DBPORT") + " user=" + os.Getenv("USER") + " dbname=" + os.Getenv("DBNAME") + " sslmode=disable password=" + os.Getenv("PASSWORD"))
+	fmt.Println(conf)
 	Db, err = gorm.Open(
 		"postgres",
 		conf)
