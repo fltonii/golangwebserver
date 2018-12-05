@@ -23,8 +23,8 @@ func main() {
 	server := &http.Server{
 		Addr:         ":7070",
 		Handler:      routes.Routes(),
-		ReadTimeout:  4 * time.Second,
-		WriteTimeout: 4 * time.Second,
+		ReadTimeout:  10 * time.Second,
+		WriteTimeout: 10 * time.Second,
 	}
 	server.ListenAndServe()
 	defer config.Db.Close()
