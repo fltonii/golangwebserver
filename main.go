@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"os"
+	"time"
 
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/joaotonial/golangwebserver/config"
@@ -20,7 +20,12 @@ func main() {
 	models.InitialMigration()
 	fmt.Println("Starting Router...")
 	fmt.Printf("Running on port %s\n", os.Getenv("PORT"))
-	// http.DefaultClient
-	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), (routes.Routes())))
+	server := &http.Server{
+		Addr:         ":7070",
+		Handler:      routes.Routes(),
+		ReadTimeout:  10 * time.Second,
+		WriteTimeout: 10 * time.Second,
+	}
+	server.ListenAndServe()
 	defer config.Db.Close()
 }
